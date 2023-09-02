@@ -61,7 +61,10 @@ class CompletedTaskScreen extends StatelessWidget {
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Tile(data: data,index: index,),
+                                          Tile(
+                                            data: data,
+                                            index: index,
+                                          ),
                                           Row(
                                             children: [
                                               IconButton(
@@ -96,4 +99,3 @@ class CompletedTaskScreen extends StatelessWidget {
     );
   }
 }
-

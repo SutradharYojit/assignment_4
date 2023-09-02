@@ -30,7 +30,7 @@ class TodoDataList extends StateNotifier<List<TodoItem>> {
   void updateStatus(int index,bool value) {
 
     if(value){
-      state[index].flag=value;
+      state[index].flag= value;
       state[index].status=TaskStatus.completed;
     }else{
       state[index].flag=value;

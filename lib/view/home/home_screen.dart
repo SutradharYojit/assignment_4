@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../widget/widget.dart';
 import 'data_list_provider.dart';
 
-class MyHomePage extends  StatelessWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
   @override
@@ -43,13 +43,12 @@ class MyHomePage extends  StatelessWidget {
                                           heightFactor: 0.8,
                                           child: AddTaskScreen(
                                             data: UpdateData(
-                                              index: index,
-                                              title: data[index].title,
-                                              description: data[index].description,
-                                              homeScreen: true,
-                                              taskStatus: data[index].status,
-                                              flag:data[index].flag
-                                            ),
+                                                index: index,
+                                                title: data[index].title,
+                                                description: data[index].description,
+                                                homeScreen: true,
+                                                taskStatus: data[index].status,
+                                                flag: data[index].flag),
                                           ),
                                         );
                                       },
@@ -61,8 +60,10 @@ class MyHomePage extends  StatelessWidget {
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Tile(data: data,index: index,),
-
+                                          Tile(
+                                            data: data,
+                                            index: index,
+                                          ),
                                           Row(
                                             children: [
                                               IconButton(
@@ -73,8 +74,8 @@ class MyHomePage extends  StatelessWidget {
                                               ),
                                               Checkbox(
                                                 value: data[index].flag,
-                                                onChanged: (value)  {
-                                                  ref.read(todoList.notifier).updateStatus(index,value!);
+                                                onChanged: (value) {
+                                                  ref.read(todoList.notifier).updateStatus(index, value!);
                                                 },
                                               ),
                                             ],
